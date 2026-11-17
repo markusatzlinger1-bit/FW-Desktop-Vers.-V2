@@ -1,0 +1,35 @@
+{
+  "name": "forward-writing-studio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Forward — paragraph-locked drafting, offline desktop app",
+  "main": "main.cjs",
+  "author": "Forward",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "build:windows": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "45.3.3",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "studio.forward.writer",
+    "productName": "Forward",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.cjs",
+      "web/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "web/icon.ico",
+      "artifactName": "Forward-Windows-${version}-${arch}.${ext}"
+    }
+  }
+}
